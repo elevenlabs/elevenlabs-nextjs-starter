@@ -9,7 +9,7 @@
 1. Clone the repo
 
 ```bash
-git clone git@github.com:elevenlabs/elevenlabs-nextjs-starter.git
+git clone https://github.com/elevenlabs/elevenlabs-nextjs-starter.git
 cd examples/elevenlabs-nextjs
 ```
 
