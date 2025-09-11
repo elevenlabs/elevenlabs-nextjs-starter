@@ -10,7 +10,7 @@
 
 ```bash
 git clone https://github.com/elevenlabs/elevenlabs-nextjs-starter.git
-cd examples/elevenlabs-nextjs
+cd elevenlabs-nextjs-starter
 ```
 
 2. Setup the `.env` file
