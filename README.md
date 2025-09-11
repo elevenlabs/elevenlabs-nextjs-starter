@@ -9,8 +9,8 @@
 1. Clone the repo
 
 ```bash
-git clone https://github.com/elevenlabs/elevenlabs-docs.git
-cd examples/elevenlabs-nextjs
+git clone https://github.com/elevenlabs/elevenlabs-nextjs-starter.git
+cd elevenlabs-nextjs-starter
 ```
 
 2. Setup the `.env` file
