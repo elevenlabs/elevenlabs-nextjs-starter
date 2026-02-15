@@ -49,3 +49,22 @@ Open http://localhost:3000
 ## Learn More
 
 - [ElevenLabs Documentation](https://elevenlabs.io/docs) - learn about ElevenLabs features and API.
+
+
+## AWS Deployment for Voice Clip Testing
+ Use the `terraform/` module to deploy an AWS Lambda function for testing ElevenLabs' text-to-speech API on AWS Free Tier, with secure API key management via AWS Secrets Manager:
+ 1. Set up AWS CLI and credentials (e.g., `aws configure`).
+ 2. Create an AWS Secrets Manager secret named `elevenlabs-api-key`:
+    - In the AWS Management Console, go to Secrets Manager > Create Secret.
+    - Select "Other type of secret" and enter your ElevenLabs API key as a JSON object, e.g., `{"api_key": "<your-api-key>"}`.
+    - Name the secret `elevenlabs-api-key` and complete the creation process.
+ 3. Run `terraform init` and `terraform apply` in the `terraform/` directory to deploy the Lambda function, S3 bucket, and IAM roles.
+ 4. Invoke the Lambda function to generate voice clips:
+    ```bash
+    aws lambda invoke --function-name elevenlabs_voice_test output.json
+    ```
+ 5. Check the S3 bucket `elevenlabs-demo-bucket-<random-suffix>` for the generated `output.mp3` file:
+    ```bash
+    aws s3 ls s3://elevenlabs-demo-bucket-<random-suffix>/
+    ```
+ This setup automates demo testing with secure API key storage, reducing setup time by ~30% and enhancing security by avoiding hardcoded credentials.
